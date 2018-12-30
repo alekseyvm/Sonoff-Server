@@ -1,0 +1,16 @@
+version: '3'
+services:
+  sonoff:
+    build: .
+    image: sonoff-php
+    hostname: sonoff
+    container_name: sonoff
+
+    ports:
+      - "2443:2443"
+      - "2333:2333"
+
+
+    volumes:
+      - ./logs:/app/logs
+      - ./ssl:/app/ssl
